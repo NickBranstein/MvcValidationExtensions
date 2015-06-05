@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTest", "WebTest\WebTest.csproj", "{639E6137-4E1E-4ABF-9B51-324A3E0546CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcValidationExtensions", "MvcValidationExtensions\MvcValidationExtensions.csproj", "{EB60983C-5845-4D52-B69B-68C27E6DF300}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTest.Test", "WebTest.UnitTest\WebTest.Test.csproj", "{2D2BC1CF-D893-4D22-829C-9FF6580FD89D}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://nickisnick.visualstudio.com/defaultcollection
+		SccProjectUniqueName0 = WebTest\\WebTest.csproj
+		SccProjectName0 = WebTest
+		SccAuxPath0 = https://nickisnick.visualstudio.com/defaultcollection
+		SccLocalPath0 = WebTest
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = MvcValidationExtensions\\MvcValidationExtensions.csproj
+		SccProjectName1 = MvcValidationExtensions
+		SccAuxPath1 = https://nickisnick.visualstudio.com/defaultcollection
+		SccLocalPath1 = MvcValidationExtensions
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = WebTest.UnitTest\\WebTest.Test.csproj
+		SccProjectName2 = WebTest.UnitTest
+		SccAuxPath2 = https://nickisnick.visualstudio.com/defaultcollection
+		SccLocalPath2 = WebTest.UnitTest
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{639E6137-4E1E-4ABF-9B51-324A3E0546CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{639E6137-4E1E-4ABF-9B51-324A3E0546CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{639E6137-4E1E-4ABF-9B51-324A3E0546CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{639E6137-4E1E-4ABF-9B51-324A3E0546CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB60983C-5845-4D52-B69B-68C27E6DF300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB60983C-5845-4D52-B69B-68C27E6DF300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB60983C-5845-4D52-B69B-68C27E6DF300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB60983C-5845-4D52-B69B-68C27E6DF300}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D2BC1CF-D893-4D22-829C-9FF6580FD89D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D2BC1CF-D893-4D22-829C-9FF6580FD89D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D2BC1CF-D893-4D22-829C-9FF6580FD89D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D2BC1CF-D893-4D22-829C-9FF6580FD89D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

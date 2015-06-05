@@ -1,0 +1,80 @@
+﻿@model WebTest.Models.TestModel
+@{
+    ViewBag.Title = "Test";
+}
+
+<h2>Test</h2>
+<div class="container-fluid">
+    @using (Html.BeginForm())
+    {
+        <div class="form-horizontal">
+            <div class="form-group">
+                @Html.LabelFor(m => m.RequiredIntControl, new { @class = "col-sm-2 control-label" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(m => m.RequiredIntControl, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.SomeIntThatMightBeRequired, new { @class = "col-sm-2 control-label" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(m => m.SomeIntThatMightBeRequired, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.SomeIntThatMightBeRequired)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.SomeRequiredIfValue, new {@class = "col-sm-2 control-label"})
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(m => m.SomeRequiredIfValue, new {@class = "form-control"})
+                    @Html.ValidationMessageFor(m => m.SomeRequiredIfValue)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.RequiredIfAnyValue, new {@class = "col-sm-2 control-label"})
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(m => m.RequiredIfAnyValue, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.RequiredIfAnyValue)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.RequiredIfAnyValueControl, new { @class = "col-sm-2 control-label" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(m => m.RequiredIfAnyValueControl, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.RequiredIfAnyValueControl)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.SomeValue, new { @class = "col-sm-2 control-label" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(m => m.SomeValue, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.SomeValue)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.RequiredInt, new { @class = "col-sm-2 control-label" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(m => m.RequiredInt, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.RequiredInt)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.SomeDate, new { @class = "col-sm-2 control-label" })
+                <div class="col-sm-10">
+                    @Html.EditorFor(m => m.SomeDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(m => m.SomeDate)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.SomeOtherDate, new { @class = "col-sm-2 control-label" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(m => m.SomeOtherDate, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.SomeOtherDate)
+
+                </div>
+            </div>
+            
+            @Html.HiddenFor(m => m.HiddentInt)
+            @Html.HiddenFor(m => m.HiddenDateTime)
+        </div>
+        <input class="btn" type="submit" name="submitButton" value="Submit" />
+    }
+</div>
