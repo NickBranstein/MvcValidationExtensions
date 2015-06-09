@@ -46,6 +46,10 @@
             };
             // Thanks jquery.validate.unobtrusive
 
+            var getObjectFromElement = function (element) {
+                return $(element).is(':radio') || $(element).is(':checkbox') ? $('input[name=' + element.name + ']:checked') : $(element);
+            };
+
             var compare = function (obj, otherObj, comparisonType) {
                 switch (comparisonType) {
                     case greaterThanEqual:
@@ -96,7 +100,7 @@
 
             var validateRequiredIf = function (element, parameter) {
                 var obj = $(element);
-                var otherObj = $(parameter);
+                var otherObj = getObjectFromElement(parameter);
 
                 if (otherObj.val() == null || otherObj.val() == undefined || otherObj.val() === '') {
                     return true;
@@ -107,7 +111,7 @@
 
             var validateRequiredIfValue = function (element, params) {
                 var obj = $(element);
-                var otherObj = $(params.element);
+                var otherObj = getObjectFromElement(params.element);
 
                 if (otherObj.val() == null || otherObj.val() == undefined || otherObj.val() === '') {
                     return true;
@@ -117,9 +121,9 @@
                     obj.val() != null && obj.val() != undefined && obj.val() !== '' : true;
             };
 
-            var validateRequiredIfAnyValue = function(element, params) {
+            var validateRequiredIfAnyValue = function (element, params) {
                 var obj = $(element);
-                var otherObj = $(params.element);
+                var otherObj = getObjectFromElement(params.element);
 
                 if (otherObj.val() == null || otherObj.val() == undefined || otherObj.val() === '') {
                     return true;
@@ -181,7 +185,6 @@
             init: init
         };
     }();
-
 
     mvcvalidationextensions.init();
 
