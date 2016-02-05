@@ -20,7 +20,7 @@ namespace MvcValidationExtensions.Attribute
         {
             if (otherProperty == null)
             {
-                throw new ArgumentNullException("otherProperty");
+                throw new ArgumentNullException($"{nameof(otherProperty)} cannot be null or empty.");
             }
 
             OtherProperty = otherProperty;

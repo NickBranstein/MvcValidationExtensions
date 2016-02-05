@@ -16,6 +16,11 @@ namespace MvcValidationExtensions.Attribute
 
         public RequiredIfAnyValueAttribute(string otherProperty, string[] otherValues)
         {
+            if (string.IsNullOrWhiteSpace(otherProperty) || (otherValues?.Any(string.IsNullOrWhiteSpace) ?? true))
+            {
+                throw new ArgumentNullException($"{nameof(otherProperty)} and {nameof(otherValues)} cannot but null or empty.");
+            }
+
             OtherValues = otherValues;
             OtherProperty = otherProperty;
         }

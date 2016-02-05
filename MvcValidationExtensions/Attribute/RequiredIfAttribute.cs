@@ -13,6 +13,11 @@ namespace MvcValidationExtensions.Attribute
 
         public RequiredIfAttribute(string otherProperty)
         {
+            if (string.IsNullOrWhiteSpace(otherProperty))
+            {
+                throw new ArgumentNullException($"{nameof(otherProperty)} cannot but null or empty.");
+            }
+
             OtherProperty = otherProperty;
         }
 

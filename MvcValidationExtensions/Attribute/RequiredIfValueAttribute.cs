@@ -14,6 +14,11 @@ namespace MvcValidationExtensions.Attribute
 
         public RequiredIfValueAttribute(string otherProperty, string otherValue)
         {
+            if (string.IsNullOrWhiteSpace(otherProperty) || string.IsNullOrWhiteSpace(otherValue))
+            {
+                throw new ArgumentNullException($"{nameof(otherProperty)} and {nameof(otherValue)} cannot but null or empty.");
+            }
+
             OtherValue = otherValue;
             OtherProperty = otherProperty;
         }
@@ -24,7 +29,7 @@ namespace MvcValidationExtensions.Attribute
 
             if (otherPropertyInfo == null)
             {
-                return new ValidationResult(String.Format(CultureInfo.CurrentCulture, UnknownProperty, OtherProperty));
+                return new ValidationResult(string.Format(CultureInfo.CurrentCulture, UnknownProperty, OtherProperty));
             }
 
             var otherPropertyValue = otherPropertyInfo.GetValue(validationContext.ObjectInstance);

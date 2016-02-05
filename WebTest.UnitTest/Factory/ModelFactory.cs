@@ -5,231 +5,212 @@ namespace WebTest.UnitTest.Factory
 {
     public static class ModelFactory
     {
-        public static TestModel ValidTestModel
+        public static TestModel ValidTestModel => new TestModel()
         {
-            get
-            {
-                return new TestModel()
-                {
-                    RequiredIntControl = "require Some int",
-                    SomeIntThatMightBeRequired = 100,
-                    SomeValue = 60,
-                    RequiredInt = 61,
-                    SomeOtherDate = DateTime.Today,
-                    SomeDate = DateTime.Today.AddDays(-1.0),
-                    HiddentInt = 55,
-                    HiddenDateTime = DateTime.Today,
-                    KendoDateOther = DateTime.Today,
-                    KendoDate = DateTime.Today
-                };
-            }
-        }
+            RequiredIntControl = "require Some int",
+            SomeIntThatMightBeRequired = 100,
+            SomeValue = 60,
+            RequiredInt = 61,
+            SomeOtherDate = DateTime.Today,
+            SomeDate = DateTime.Today.AddDays(-1.0),
+            HiddentInt = 55,
+            HiddenDateTime = DateTime.Today,
+            KendoDateOther = DateTime.Today,
+            KendoDate = DateTime.Today
+        };
 
-        public static TestModel InvalidGreaterThanIntModel
+        public static TestModel InvalidGreaterThanIntModel => new TestModel()
         {
-            get
-            {
-                return new TestModel()
-                {
-                    RequiredIntControl = "require Some int",
-                    SomeIntThatMightBeRequired = 100,
-                    SomeValue = 55,
-                    RequiredInt = 61,
-                    SomeOtherDate = DateTime.Today,
-                    SomeDate = DateTime.Today.AddDays(-1.0),
-                    HiddentInt = 55,
-                    HiddenDateTime = DateTime.Today,
-                    KendoDateOther = DateTime.Today,
-                    KendoDate = DateTime.Today
-                };
-            }
-        }
+            RequiredIntControl = "require Some int",
+            SomeIntThatMightBeRequired = 100,
+            SomeValue = 55,
+            RequiredInt = 61,
+            SomeOtherDate = DateTime.Today,
+            SomeDate = DateTime.Today.AddDays(-1.0),
+            HiddentInt = 55,
+            HiddenDateTime = DateTime.Today,
+            KendoDateOther = DateTime.Today,
+            KendoDate = DateTime.Today
+        };
 
-        public static TestModel InvalidLessThanDateModel
+        public static TestModel InvalidLessThanDateModel => new TestModel()
         {
-            get
-            {
-                return new TestModel()
-                {
-                    RequiredIntControl = "require Some int",
-                    SomeIntThatMightBeRequired = 100,
-                    SomeValue = 60,
-                    RequiredInt = 61,
-                    SomeOtherDate = DateTime.Today,
-                    SomeDate = DateTime.Today,
-                    HiddentInt = 55,
-                    HiddenDateTime = DateTime.Today,
-                    KendoDateOther = DateTime.Today,
-                    KendoDate = DateTime.Today
-                };
-            }
-        }
+            RequiredIntControl = "require Some int",
+            SomeIntThatMightBeRequired = 100,
+            SomeValue = 60,
+            RequiredInt = 61,
+            SomeOtherDate = DateTime.Today,
+            SomeDate = DateTime.Today,
+            HiddentInt = 55,
+            HiddenDateTime = DateTime.Today,
+            KendoDateOther = DateTime.Today,
+            KendoDate = DateTime.Today
+        };
 
-        public static TestModel InvalidLessThanEqualToDateModel
+        public static TestModel InvalidLessThanEqualToDateModel => new TestModel()
         {
-            get
-            {
-                return new TestModel()
-                {
-                    RequiredIntControl = "require Some int",
-                    SomeIntThatMightBeRequired = 100,
-                    SomeValue = 60,
-                    RequiredInt = 61,
-                    SomeOtherDate = DateTime.Today.AddDays(1.0),
-                    SomeDate = DateTime.Today.AddDays(-1.0),
-                    HiddentInt = 55,
-                    HiddenDateTime = DateTime.Today,
-                    KendoDateOther = DateTime.Today,
-                    KendoDate = DateTime.Today
-                };
-            }
-        }
+            RequiredIntControl = "require Some int",
+            SomeIntThatMightBeRequired = 100,
+            SomeValue = 60,
+            RequiredInt = 61,
+            SomeOtherDate = DateTime.Today.AddDays(1.0),
+            SomeDate = DateTime.Today.AddDays(-1.0),
+            HiddentInt = 55,
+            HiddenDateTime = DateTime.Today,
+            KendoDateOther = DateTime.Today,
+            KendoDate = DateTime.Today
+        };
 
-        public static TestModel InvalidGreaterThanEqualToDateModel
+        public static TestModel InvalidGreaterThanEqualToDateModel => new TestModel()
         {
-            get
-            {
-                return new TestModel()
-                {
-                    RequiredIntControl = "require Some int",
-                    SomeIntThatMightBeRequired = 100,
-                    SomeValue = 60,
-                    RequiredInt = 61,
-                    SomeOtherDate = DateTime.Today,
-                    SomeDate = DateTime.Today.AddDays(-1.0),
-                    HiddentInt = 55,
-                    HiddenDateTime = DateTime.Today,
-                    KendoDateOther = DateTime.Today,
-                    KendoDate = DateTime.Today.AddDays(-1.0)
-                };
-            }
-        }
+            RequiredIntControl = "require Some int",
+            SomeIntThatMightBeRequired = 100,
+            SomeValue = 60,
+            RequiredInt = 61,
+            SomeOtherDate = DateTime.Today,
+            SomeDate = DateTime.Today.AddDays(-1.0),
+            HiddentInt = 55,
+            HiddenDateTime = DateTime.Today,
+            KendoDateOther = DateTime.Today,
+            KendoDate = DateTime.Today.AddDays(-1.0)
+        };
 
-        public static TestModel ValidRequiredIfModel
-        {
-            get
-            {
-                return new TestModel()
-                {
-                    RequiredIntControl = null,
-                    SomeIntThatMightBeRequired = null,
-                    SomeValue = 60,
-                    RequiredInt = 61,
-                    SomeOtherDate = DateTime.Today,
-                    SomeDate = DateTime.Today.AddDays(-1.0),
-                    HiddentInt = 55,
-                    HiddenDateTime = DateTime.Today,
-                    KendoDateOther = DateTime.Today,
-                    KendoDate = DateTime.Today
-                };
-            }
-        }
+        
 
-        public static TestModel InvalidRequiredIfModel
+        public static TestModel ValidRequiredIfValueModel => new TestModel()
         {
-            get
-            {
-                return new TestModel()
-                {
-                    RequiredIntControl = "require Some int",
-                    SomeIntThatMightBeRequired = null,
-                    SomeValue = 60,
-                    RequiredInt = 61,
-                    SomeOtherDate = DateTime.Today,
-                    SomeDate = DateTime.Today.AddDays(-1.0),
-                    HiddentInt = 55,
-                    HiddenDateTime = DateTime.Today,
-                    KendoDateOther = DateTime.Today,
-                    KendoDate = DateTime.Today
-                };
-            }
-        }
+            RequiredIntControl = "15",
+            SomeIntThatMightBeRequired = 100,
+            SomeRequiredIfValue = 200,
+            SomeValue = 60,
+            RequiredInt = 61,
+            SomeOtherDate = DateTime.Today,
+            SomeDate = DateTime.Today.AddDays(-1.0),
+            HiddentInt = 55,
+            HiddenDateTime = DateTime.Today,
+            KendoDateOther = DateTime.Today,
+            KendoDate = DateTime.Today
+        };
 
-        public static TestModel ValidRequiredIfValueModel
+        public static TestModel InvalidRequiredIfValueModel => new TestModel()
         {
-            get
-            {
-                return new TestModel()
-                {
-                    RequiredIntControl = "15",
-                    SomeIntThatMightBeRequired = 100,
-                    SomeRequiredIfValue = 200,
-                    SomeValue = 60,
-                    RequiredInt = 61,
-                    SomeOtherDate = DateTime.Today,
-                    SomeDate = DateTime.Today.AddDays(-1.0),
-                    HiddentInt = 55,
-                    HiddenDateTime = DateTime.Today,
-                    KendoDateOther = DateTime.Today,
-                    KendoDate = DateTime.Today
-                };
-            }
-        }
+            RequiredIntControl = "15",
+            SomeIntThatMightBeRequired = null,
+            SomeRequiredIfValue = 200,
+            SomeValue = 60,
+            RequiredInt = 61,
+            SomeOtherDate = DateTime.Today,
+            SomeDate = DateTime.Today.AddDays(-1.0),
+            HiddentInt = 55,
+            HiddenDateTime = DateTime.Today,
+            KendoDateOther = DateTime.Today,
+            KendoDate = DateTime.Today
+        };
 
-        public static TestModel InvalidRequiredIfValueModel
+        public static TestModel ValidRequiredIfAnyValuesModel => new TestModel()
         {
-            get
-            {
-                return new TestModel()
-                {
-                    RequiredIntControl = "15",
-                    SomeIntThatMightBeRequired = null,
-                    SomeRequiredIfValue = 200,
-                    SomeValue = 60,
-                    RequiredInt = 61,
-                    SomeOtherDate = DateTime.Today,
-                    SomeDate = DateTime.Today.AddDays(-1.0),
-                    HiddentInt = 55,
-                    HiddenDateTime = DateTime.Today,
-                    KendoDateOther = DateTime.Today,
-                    KendoDate = DateTime.Today
-                };
-            }
-        }
+            RequiredIntControl = "15",
+            SomeIntThatMightBeRequired = 100,
+            SomeRequiredIfValue = 200,
+            SomeValue = 60,
+            RequiredInt = 61,
+            SomeOtherDate = DateTime.Today,
+            SomeDate = DateTime.Today.AddDays(-1.0),
+            HiddentInt = 55,
+            HiddenDateTime = DateTime.Today,
+            KendoDateOther = DateTime.Today,
+            KendoDate = DateTime.Today,
+            RequiredIfAnyValue = 15,
+            RequiredIfAnyValueControl = "ValTwo"
+        };
 
-        public static TestModel ValidRequiredIfAnyValuesModel
+        public static TestModel InvalidRequiredIfAnyValuesModel => new TestModel()
         {
-            get
-            {
-                return new TestModel()
-                {
-                    RequiredIntControl = "15",
-                    SomeIntThatMightBeRequired = 100,
-                    SomeRequiredIfValue = 200,
-                    SomeValue = 60,
-                    RequiredInt = 61,
-                    SomeOtherDate = DateTime.Today,
-                    SomeDate = DateTime.Today.AddDays(-1.0),
-                    HiddentInt = 55,
-                    HiddenDateTime = DateTime.Today,
-                    KendoDateOther = DateTime.Today,
-                    KendoDate = DateTime.Today,
-                    RequiredIfAnyValue = 15,
-                    RequiredIfAnyValueControl = "ValTwo"
-                };
-            }
-        }
+            RequiredIntControl = "15",
+            SomeIntThatMightBeRequired = 100,
+            SomeRequiredIfValue = 200,
+            SomeValue = 60,
+            RequiredInt = 61,
+            SomeOtherDate = DateTime.Today,
+            SomeDate = DateTime.Today.AddDays(-1.0),
+            HiddentInt = 55,
+            HiddenDateTime = DateTime.Today,
+            KendoDateOther = DateTime.Today,
+            KendoDate = DateTime.Today,
+            RequiredIfAnyValueControl = "ValThree"
+        };
 
-        public static TestModel InvalidRequiredIfAnyValuesModel
+        public static class RequiredIfModels
         {
-            get
+            public static TestModel ValidRequiredIfModel => new TestModel()
             {
-                return new TestModel()
-                {
-                    RequiredIntControl = "15",
-                    SomeIntThatMightBeRequired = 100,
-                    SomeRequiredIfValue = 200,
-                    SomeValue = 60,
-                    RequiredInt = 61,
-                    SomeOtherDate = DateTime.Today,
-                    SomeDate = DateTime.Today.AddDays(-1.0),
-                    HiddentInt = 55,
-                    HiddenDateTime = DateTime.Today,
-                    KendoDateOther = DateTime.Today,
-                    KendoDate = DateTime.Today,
-                    RequiredIfAnyValueControl = "ValThree"
-                };
-            }
+                RequiredIntControl = null,
+                SomeIntThatMightBeRequired = null,
+                SomeValue = 60,
+                RequiredInt = 61,
+                SomeOtherDate = DateTime.Today,
+                SomeDate = DateTime.Today.AddDays(-1.0),
+                HiddentInt = 55,
+                HiddenDateTime = DateTime.Today,
+                KendoDateOther = DateTime.Today,
+                KendoDate = DateTime.Today
+            };
+
+            public static TestModel InvalidRequiredIfModel => new TestModel()
+            {
+                RequiredIntControl = "require Some int",
+                SomeIntThatMightBeRequired = null,
+                SomeValue = 60,
+                RequiredInt = 61,
+                SomeOtherDate = DateTime.Today,
+                SomeDate = DateTime.Today.AddDays(-1.0),
+                HiddentInt = 55,
+                HiddenDateTime = DateTime.Today,
+                KendoDateOther = DateTime.Today,
+                KendoDate = DateTime.Today
+            };
+
+            public static TestModel RequiredIfEmptyStringModel => new TestModel()
+            {
+                RequiredIntControl = "",
+                SomeIntThatMightBeRequired = 100,
+                SomeValue = 60,
+                RequiredInt = 61,
+                SomeOtherDate = DateTime.Today,
+                SomeDate = DateTime.Today.AddDays(-1.0),
+                HiddentInt = 55,
+                HiddenDateTime = DateTime.Today,
+                KendoDateOther = DateTime.Today,
+                KendoDate = DateTime.Today
+            };
+
+            public static TestModel RequiredIfWhitespaceModel => new TestModel()
+            {
+                RequiredIntControl = "   ",
+                SomeIntThatMightBeRequired = 100,
+                SomeValue = 60,
+                RequiredInt = 61,
+                SomeOtherDate = DateTime.Today,
+                SomeDate = DateTime.Today.AddDays(-1.0),
+                HiddentInt = 55,
+                HiddenDateTime = DateTime.Today,
+                KendoDateOther = DateTime.Today,
+                KendoDate = DateTime.Today
+            };
+
+            public static TestModel RequiredIfNullModel => new TestModel()
+            {
+                RequiredIntControl = null,
+                SomeIntThatMightBeRequired = 100,
+                SomeValue = 60,
+                RequiredInt = 61,
+                SomeOtherDate = DateTime.Today,
+                SomeDate = DateTime.Today.AddDays(-1.0),
+                HiddentInt = 55,
+                HiddenDateTime = DateTime.Today,
+                KendoDateOther = DateTime.Today,
+                KendoDate = DateTime.Today
+            };
         }
     }
 }
