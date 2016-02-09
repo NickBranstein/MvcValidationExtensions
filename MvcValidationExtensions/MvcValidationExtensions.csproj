@@ -79,6 +79,7 @@
     <Compile Include="Attribute\LessThanEqualToAttribute.cs" />
     <Compile Include="Attribute\RequiredIfAnyValueAttribute.cs" />
     <Compile Include="Attribute\RequiredIfAttribute.cs" />
+    <Compile Include="Attribute\RequiredIfEmptyAttribute.cs" />
     <Compile Include="Attribute\RequiredIfValueAttribute.cs" />
     <Compile Include="Enum\Comparison.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,6 +91,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(ProjectDir)\Scripts\mvcvalidationextensions.unobtrusive.js" "$(SolutionDir)\WebTest\Scripts\mvcvalidationextensions.unobtrusive.js"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

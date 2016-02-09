@@ -7,7 +7,8 @@
                 lessThan = 'lessthan',
                 requiredIf = 'requiredif',
                 requiredIfValue = 'requiredifvalue',
-                requiredIfAnyValue = 'requiredifanyvalue';
+                requiredIfAnyValue = 'requiredifanyvalue',
+                requiredIfEmpty = 'requiredifempty';
             var comparisonParams = ['otherproperty'];
             var comparisonValueParams = ['otherproperty', 'othervalue'];
 
@@ -18,7 +19,8 @@
                 { type: lessThan, params: comparisonParams },
                 { type: requiredIf, params: comparisonParams },
                 { type: requiredIfValue, params: comparisonValueParams },
-                { type: requiredIfAnyValue, params: comparisonValueParams }
+                { type: requiredIfAnyValue, params: comparisonValueParams },
+                { type: requiredIfEmpty, params: comparisonParams }
             ];
 
             // Taken from jquery.validate.unobtrusive because this was better than what we were originally doing.
@@ -133,6 +135,13 @@
                     obj.val() != null && obj.val() != undefined && obj.val() !== '' : true;
             };
 
+            var validateRequiredIfEmpty = function(element, parameter) {
+                var obj = $(element);
+                var otherObj = getObjectFromElement(parameter);
+
+                return (otherObj.val() == null || otherObj.val() == undefined || otherObj.val().trim() === '') ? (obj.val() != null && obj.val() != undefined && obj.val() !== '') : true;
+            };
+
             // setup our comparison adapters
             for (var i = 0; i < customValidators.length; i++) {
                 $.validator.unobtrusive.adapters.add(customValidators[i].type, customValidators[i].params,
@@ -178,6 +187,10 @@
 
             $.validator.addMethod(requiredIfAnyValue, function (value, element, params) {
                 return validateRequiredIfAnyValue(element, params);
+            });
+
+            $.validator.addMethod(requiredIfEmpty, function (value, element, params) {
+                return validateRequiredIfEmpty(element, params);
             });
         };
 

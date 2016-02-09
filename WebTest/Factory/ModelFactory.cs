@@ -1,7 +1,7 @@
 ﻿using System;
 using WebTest.Models;
 
-namespace WebTest.UnitTest.Factory
+namespace WebTest.Factory
 {
     public static class ModelFactory
     {
@@ -142,7 +142,7 @@ namespace WebTest.UnitTest.Factory
 
         public static class RequiredIfModels
         {
-            public static TestModel ValidRequiredIfModel => new TestModel()
+            public static TestModel ValidModel => new TestModel()
             {
                 RequiredIntControl = null,
                 SomeIntThatMightBeRequired = null,
@@ -156,7 +156,7 @@ namespace WebTest.UnitTest.Factory
                 KendoDate = DateTime.Today
             };
 
-            public static TestModel InvalidRequiredIfModel => new TestModel()
+            public static TestModel InvalidModel => new TestModel()
             {
                 RequiredIntControl = "require Some int",
                 SomeIntThatMightBeRequired = null,
@@ -210,6 +210,45 @@ namespace WebTest.UnitTest.Factory
                 HiddenDateTime = DateTime.Today,
                 KendoDateOther = DateTime.Today,
                 KendoDate = DateTime.Today
+            };
+        }
+
+        public static class RequiredIfEmptyModels
+        {
+            public static RequiredIfEmptyModel ValidNullModel => new RequiredIfEmptyModel()
+            {
+                RequiredIfEmptyControl = null,
+                MightBeRequired = 1
+            };
+
+            public static RequiredIfEmptyModel InvalidNullModel => new RequiredIfEmptyModel()
+            {
+                RequiredIfEmptyControl = null,
+                MightBeRequired = null
+            };
+
+            public static RequiredIfEmptyModel ValidEmptyStringModel => new RequiredIfEmptyModel()
+            {
+                RequiredIfEmptyControl = "",
+                MightBeRequired = 1
+            };
+
+            public static RequiredIfEmptyModel InvalidEmptyStringModel => new RequiredIfEmptyModel()
+            {
+                RequiredIfEmptyControl = "",
+                MightBeRequired = null
+            };
+
+            public static RequiredIfEmptyModel ValidWhitespaceModel => new RequiredIfEmptyModel()
+            {
+                RequiredIfEmptyControl = "  ",
+                MightBeRequired = 1
+            };
+
+            public static RequiredIfEmptyModel InvalidWhitespaceModel => new RequiredIfEmptyModel()
+            {
+                RequiredIfEmptyControl = "  ",
+                MightBeRequired = null 
             };
         }
     }

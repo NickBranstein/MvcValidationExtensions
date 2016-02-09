@@ -1,0 +1,16 @@
+﻿@using WebTest.Factory
+@{
+    ViewBag.Title = "RequiredIfEmpty";
+}
+
+<h2>RequiredIfEmpty</h2>
+<div class="container-fluid">
+    @using (Html.BeginForm())
+    {
+        <div class="form-horizontal">
+            <p>Invalid Model</p>
+            @Html.Partial("_RequiredIfEmptyPartial", ModelFactory.RequiredIfEmptyModels.InvalidWhitespaceModel)
+        </div>
+        <input class="btn" type="submit" name="submitButton" value="Submit"/>
+    }
+</div>

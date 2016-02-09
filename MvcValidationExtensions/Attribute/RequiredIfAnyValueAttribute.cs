@@ -31,7 +31,7 @@ namespace MvcValidationExtensions.Attribute
 
             if (otherPropertyInfo == null)
             {
-                return new ValidationResult(String.Format(CultureInfo.CurrentCulture, UnknownProperty, OtherProperty));
+                return new ValidationResult(string.Format(CultureInfo.CurrentCulture, UnknownProperty, OtherProperty));
             }
 
             var otherPropertyValue = otherPropertyInfo.GetValue(validationContext.ObjectInstance);

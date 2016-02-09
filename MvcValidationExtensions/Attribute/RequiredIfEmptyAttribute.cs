@@ -6,12 +6,12 @@ using System.Web.Mvc;
 
 namespace MvcValidationExtensions.Attribute
 {
-    public class RequiredIfAttribute : RequiredAttribute, IClientValidatable
+    public class RequiredIfEmptyAttribute : RequiredAttribute, IClientValidatable
     {
         protected string OtherProperty { get; private set; }
         private const string UnknownProperty = "The property {0} could not be found.";
 
-        public RequiredIfAttribute(string otherProperty)
+        public RequiredIfEmptyAttribute(string otherProperty)
         {
             if (string.IsNullOrWhiteSpace(otherProperty))
             {
@@ -31,8 +31,9 @@ namespace MvcValidationExtensions.Attribute
             }
 
             var otherPropertyValue = otherPropertyInfo.GetValue(validationContext.ObjectInstance);
+            var stringOtherPropertyValue = otherPropertyValue as string;
 
-            return base.IsValid(otherPropertyValue) ? base.IsValid(value) ? ValidationResult.Success : new ValidationResult(FormatErrorMessage(validationContext.DisplayName)) : ValidationResult.Success;
+            return (otherPropertyValue == null || string.IsNullOrWhiteSpace(stringOtherPropertyValue) ) ? base.IsValid(value) ? ValidationResult.Success : new ValidationResult(FormatErrorMessage(validationContext.DisplayName)) : ValidationResult.Success;
         }
 
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)

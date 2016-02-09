@@ -60,7 +60,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Factory\ModelFactory.cs" />
+    <Compile Include="RequiredIfEmptyUnitTests.cs" />
     <Compile Include="RequiredIfUnitTests.cs" />
     <Compile Include="ValidationAttributeUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

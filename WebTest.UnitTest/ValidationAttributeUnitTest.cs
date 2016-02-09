@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
-using WebTest.UnitTest.Factory;
+using WebTest.Factory;
 
 namespace WebTest.UnitTest
 {

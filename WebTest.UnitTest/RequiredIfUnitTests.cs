@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
-using WebTest.UnitTest.Factory;
+using WebTest.Factory;
 
 namespace WebTest.UnitTest
 {
@@ -11,13 +11,13 @@ namespace WebTest.UnitTest
         [TestMethod]
         public void RequiredIfModelShouldBeValid()
         {
-            ValidationHelper.ValidateModel(ModelFactory.RequiredIfModels.ValidRequiredIfModel).Any().ShouldBeFalse();
+            ValidationHelper.ValidateModel(ModelFactory.RequiredIfModels.ValidModel).Any().ShouldBeFalse();
         }
 
         [TestMethod]
         public void RequiredIfModelShouldBeInvalid()
         {
-            ValidationHelper.ValidateModel(ModelFactory.RequiredIfModels.InvalidRequiredIfModel).Count().ShouldBe(1);
+            ValidationHelper.ValidateModel(ModelFactory.RequiredIfModels.InvalidModel).Count().ShouldBe(1);
         }
 
         [TestMethod]
